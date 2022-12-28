@@ -23,7 +23,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav id="navbar">
       <div class="navbar__logo">
         <i class="fa-brands fa-diaspora"></i>
         <a href="#">Ju Won</a>
@@ -37,6 +37,7 @@
         <li class="navbar__menu--item">Contact</li>
       </ul>
     </nav>
+
     <!-- Home -->
     <section id="home">
       <img
@@ -50,8 +51,9 @@
       </h2>
       <button class="home__contact">Contact</button>
     </section>
+
     <!-- About -->
-    <section class="about">
+    <section id="about">
       <h1>About me</h1>
       <p>
         Hardworking and motivated student in Computer Science with first class
@@ -88,8 +90,9 @@
         <p class="school__period">Sept. 2019 - Sept. 2021</p>
       </div>
     </section>
+
     <!-- Skills -->
-    <section class="skills">
+    <section id="skills">
       <h1>Skills</h1>
       <h2>Skills & Attributes</h2>
       <p>
@@ -105,6 +108,24 @@
             <div class="skill_description">
               <span>HTML</span>
               <span>99%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill_description">
+              <span>CSS</span>
+              <span>70%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill_description">
+              <span>JavaScript</span>
+              <span>50%</span>
             </div>
             <div class="skill__bar">
               <div class="skill__value"></div>
@@ -131,11 +152,88 @@
         </div>
       </div>
     </section>
+
     <!-- Work -->
-    <section class="work"></section>
+    <section id="work">
+      <h1>My work</h1>
+      <h3>Projects</h3>
+      <div class="work__categories">
+        <button class="category__btn">
+          All<span class="category__count">8</span>
+        </button>
+        <button class="category__btn">
+          Front-end<span class="category__count">3</span>
+        </button>
+        <button class="category__btn">
+          Back-end<span class="category__count">3</span>
+        </button>
+        <button class="category__btn">
+          Mobile<span class="category__count">2</span>
+        </button>
+      </div>
+
+      <div class="work__projects">
+        <a href="#" class="project" target="blank" data-type="project1">
+          <img src="images/project1.png" alt="Project1" />
+          <div class="project__descripton">
+            <h3>Project 1 title</h3>
+            <span>Examplary description for the project 1</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project2">
+          <img src="images/project2.png" alt="Project2" />
+          <div class="project__descripton">
+            <h3>Project 2 title</h3>
+            <span>Examplary description for the project 2</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project3">
+          <img src="images/project3.png" alt="Project3" />
+          <div class="project__descripton">
+            <h3>Project 3 title</h3>
+            <span>Examplary description for the project 1</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project4">
+          <img src="images/project4.png" alt="Project4" />
+          <div class="project__descripton">
+            <h3>Project 4 title</h3>
+            <span>Examplary description for the project 4</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project5">
+          <img src="images/project5.png" alt="Project5" />
+          <div class="project__descripton">
+            <h3>Project 5 title</h3>
+            <span>Examplary description for the project 5</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project6">
+          <img src="images/project6.png" alt="Project6" />
+          <div class="project__descripton">
+            <h3>Project 6 title</h3>
+            <span>Examplary description for the project 6</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project7">
+          <img src="images/project7.png" alt="Project7" />
+          <div class="project__descripton">
+            <h3>Project 7 title</h3>
+            <span>Examplary description for the project 7</span>
+          </div>
+        </a>
+        <a href="#" class="project" target="blank" data-type="project8">
+          <img src="images/project8.png" alt="Project8" />
+          <div class="project__descripton">
+            <h3>Project 8 title</h3>
+            <span>Examplary description for the project 8</span>
+          </div>
+        </a>
+      </div>
+    </section>
     <!-- Testimonials -->
-    <section class="testimonials"></section>
+    <section id="testimonials"></section>
     <!-- Contact -->
-    <section class="contact"></section>
+    <section id="contact"></section>
   </body>
 </html>
