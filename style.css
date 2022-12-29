@@ -90,6 +90,14 @@ p {
     margin: 4px 0;
 }
 
+/* Section */
+.section {
+    padding: 50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
 /* Navbar */
 #navbar {
     display: flex;
@@ -151,14 +159,6 @@ p {
     border: 2px solid var(--color-white);
     border-radius: 4px;
     color: var(--color-white);
-}
-
-/* Section */
-.section {
-    padding: 50px;
-    text-align: center;
-    max-width: 1200px;
-    margin: auto;
 }
 
 /* About */
