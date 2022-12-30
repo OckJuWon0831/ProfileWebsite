@@ -70,7 +70,7 @@ h1 {
 }
 
 h2 {
-    font-size: var(--font-regular);
+    font-size: var(--font-medium);
     font-weight: var(--weight-bold);
     color: var(--color-black);
     margin: 8px 0;
@@ -78,7 +78,7 @@ h2 {
 
 h3 {
     font-size: var(--font-regular);
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-semi-bold);
     color: var(--color-black);
     margin: 8px 0;
 }
@@ -381,6 +381,7 @@ p {
     background-color: var(--color-dark-white);
 }
 
+/* Testimonials */
 #testimonials {
     background-color: var(--color-light-white);
 }
@@ -424,4 +425,33 @@ p {
 
 .testimonial__speech-bubble .avatar__name {
     padding-top: 30px;
+}
+
+/* Contact */
+#contact {
+    background-color: var(--color-pink);
+}
+
+.contact__title, .contact__email, .contact__rights {
+    color: var(--color-white);
+}
+
+.contact__title {
+    margin: 32px 0;
+}
+
+.contact__links {
+    font-size: var(--font-large);
+    margin: 24px 0px;
+}
+
+.contact__links i {
+    transition: all var(--animation-duration);
+    margin: 0 20px;
+}
+
+.contact__links i:hover{
+    transition: all var(--animation-duration);
+    transform: scale(1.2);
+    color: var(--color-grey);
 }
