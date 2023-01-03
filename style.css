@@ -111,6 +111,13 @@ p {
     background-color: var(--color-pink);
     align-items: center;
     color: var(--color-white);
+    /* For opacity transition */
+    transition: all 200ms ease-in-out;
+}
+
+.navbar--transparent--off {
+    opacity: 0.8;
+    transition: 200ms ease-in-out;
 }
 
 .navbar__logo {
