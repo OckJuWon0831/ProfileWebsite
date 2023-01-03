@@ -109,10 +109,10 @@ p {
     background-color: var(--color-pink);
     align-items: center;
     color: var(--color-white);
-    padding: 16px;
 }
 
 .navbar__logo {
+    padding: 20px;
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
 }
