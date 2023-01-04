@@ -9,12 +9,32 @@
 //     }
 // });
 
+
 const navbar = document.querySelector("#navbar");
-const navbarHeight = navbar.getBoundingClientRect().height;
+const navbarMenu = navbar.querySelector(".navbar__menu");
+const home = document.querySelector("#home");
+const homeContactBtn = home.querySelector(".home__contact");
+
 window.addEventListener("scroll", () => {
+    const navbarHeight = navbar.getBoundingClientRect().height;
     if (window.scrollY > navbarHeight){
         navbar.classList.add("navbar--transparent--off");
     } else {
         navbar.classList.remove("navbar--transparent--off");
     }
 });
+
+navbarMenu.addEventListener("click", (event) => {
+    const targetEvent = event.target;
+    const link = targetEvent.dataset.link;
+    if (link == null) {
+        return;
+    }
+    const scrollTo = document.querySelector(`#${link}`);
+    scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+});
+
+homeContactBtn.addEventListener("click", () => {
+    document.querySelector("#contact").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+});
+

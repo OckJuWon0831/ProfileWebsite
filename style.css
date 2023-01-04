@@ -130,6 +130,7 @@ p {
 
 .navbar__menu {
     display: flex;
+    margin-right: 20px;
 }
 
 .navbar__menu--item {
