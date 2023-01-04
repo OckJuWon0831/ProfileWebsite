@@ -185,6 +185,13 @@ p {
     border: 2px solid var(--color-white);
     border-radius: 4px;
     color: var(--color-white);
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+.home__contact:hover {
+    background-color: var(--color-dark-pink);
+    transform: scale(1.2);
+    transition: all var(--animation-duration) ease-in-out;
 }
 
 /* About */
