@@ -24,17 +24,21 @@ window.addEventListener("scroll", () => {
     }
 });
 
+function scrollTo(link) {
+    const scrollTo = document.querySelector(`#${link}`);
+    scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+}
+
 navbarMenu.addEventListener("click", (event) => {
     const targetEvent = event.target;
     const link = targetEvent.dataset.link;
     if (link == null) {
         return;
     }
-    const scrollTo = document.querySelector(`#${link}`);
-    scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    scrollTo(link);
 });
 
 homeContactBtn.addEventListener("click", () => {
-    document.querySelector("#contact").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    scrollTo("contact");
 });
 
