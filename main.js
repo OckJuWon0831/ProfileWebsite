@@ -1,26 +1,22 @@
-// // Used scrollTop and window scroll event 
-// window.addEventListener("scroll", () => {
-//     const stOriginal = 0;
-//     const st = Math.floor(document.documentElement.scrollTop);
-//     if (st > stOriginal && st >= navbarHeight){
-//         navbar.classList.add("navbar--transparent--off");
-//     } else {
-//         navbar.classList.remove("navbar--transparent--off");
-//     }
-// });
-
-
 const navbar = document.querySelector("#navbar");
 const navbarMenu = navbar.querySelector(".navbar__menu");
+const arrowUp = document.querySelector("#arrow__up");
+const arrowBtn = arrowUp.querySelector(".arrow__up__btn");
 const home = document.querySelector(".home__container");
 const homeContactBtn = home.querySelector(".home__contact");
 
 window.addEventListener("scroll", () => {
+    const homeHeight = home.getBoundingClientRect().height;
+    const homeOpacityValue = 1-window.scrollY / homeHeight;
+    home.style.opacity = homeOpacityValue;
+
     const navbarHeight = navbar.getBoundingClientRect().height;
     if (window.scrollY > navbarHeight){
         navbar.classList.add("navbar--transparent--off");
+        arrowUp.classList.remove("hidden");
     } else {
         navbar.classList.remove("navbar--transparent--off");
+        arrowUp.classList.add("hidden")
     }
 });
 
@@ -29,12 +25,17 @@ function scrollTo(link) {
     scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 }
 
-navbarMenu.addEventListener("click", (event) => {
+function ontargetEvent(event) {
     const targetEvent = event.target;
     const link = targetEvent.dataset.link;
     if (link == null) {
         return; 
     }
+    else return link;
+}
+
+navbarMenu.addEventListener("click", (event) => {
+    const link = ontargetEvent(event);
     scrollTo(link);
 });
 
@@ -42,8 +43,32 @@ homeContactBtn.addEventListener("click", () => {
     scrollTo("contact");
 });
 
-const homeHeight = home.getBoundingClientRect().height;
-document.addEventListener("scroll", () => {
-    const homeOpacityValue = 1-window.scrollY / homeHeight;
-    home.style.opacity = homeOpacityValue;
+arrowBtn.addEventListener("click", () => {
+    scrollTo("home");
+})
+
+// Work container btn
+
+// Detect work__categories button
+const workCategory = document.querySelector(".work__categories");
+const workProjects = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workCategory.addEventListener("click", (event) => {
+    const targetEvent = event.target;
+    const filter = targetEvent.dataset.filter || targetEvent.parentNode.dataset.filter
+    if (filter == null) {
+        return;
+    }
+    workProjects.classList.add("anim-out");
+    // If the elements are block type, then setTimeout api must be implemented
+    setTimeout( () => {
+        projects.forEach((project) => {
+            if (filter === "all" || filter === project.dataset.type) {
+                project.classList.remove("visible");
+            }
+            else {project.classList.add("visible");}
+        });
+        workProjects.classList.remove("anim-out");
+    }, 300);
 });
