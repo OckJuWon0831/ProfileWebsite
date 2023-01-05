@@ -12,7 +12,7 @@
 
 const navbar = document.querySelector("#navbar");
 const navbarMenu = navbar.querySelector(".navbar__menu");
-const home = document.querySelector("#home");
+const home = document.querySelector(".home__container");
 const homeContactBtn = home.querySelector(".home__contact");
 
 window.addEventListener("scroll", () => {
@@ -33,7 +33,7 @@ navbarMenu.addEventListener("click", (event) => {
     const targetEvent = event.target;
     const link = targetEvent.dataset.link;
     if (link == null) {
-        return;
+        return; 
     }
     scrollTo(link);
 });
@@ -42,3 +42,8 @@ homeContactBtn.addEventListener("click", () => {
     scrollTo("contact");
 });
 
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+    const homeOpacityValue = 1-window.scrollY / homeHeight;
+    home.style.opacity = homeOpacityValue;
+});
