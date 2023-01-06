@@ -5,6 +5,7 @@ const arrowBtn = arrowUp.querySelector(".arrow__up__btn");
 const home = document.querySelector(".home__container");
 const homeContactBtn = home.querySelector(".home__contact");
 
+// Scroll event 
 window.addEventListener("scroll", () => {
     const homeHeight = home.getBoundingClientRect().height;
     const homeOpacityValue = 1-window.scrollY / homeHeight;
@@ -47,9 +48,7 @@ arrowBtn.addEventListener("click", () => {
     scrollTo("home");
 })
 
-// Work container btn
-
-// Detect work__categories button
+// Work category events
 const workCategory = document.querySelector(".work__categories");
 const workProjects = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
@@ -60,6 +59,15 @@ workCategory.addEventListener("click", (event) => {
     if (filter == null) {
         return;
     }
+
+    //Remove selection from the previous item and select the new one
+    const active = document.querySelector(".category__btn.selected");
+    active.classList.remove("selected");
+    // Define the target event if it is from button or span
+    const target = 
+      event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode; 
+    target.classList.add("selected");
+
     workProjects.classList.add("anim-out");
     // If the elements are block type, then setTimeout api must be implemented
     setTimeout( () => {
