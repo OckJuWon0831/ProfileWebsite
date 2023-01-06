@@ -133,6 +133,10 @@ p {
     margin-right: 20px;
 }
 
+.navbar__menu.open {
+    display: block;
+}
+
 .navbar__menu--item {
     padding: 8px 12px;
     margin: 0px 4px;
@@ -532,6 +536,8 @@ p {
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+        background-color: var(--color-pink);
+        z-index: 1;
     }
     .navbar__menu {
         flex-direction: column;

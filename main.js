@@ -37,6 +37,7 @@ function ontargetEvent(event) {
 
 navbarMenu.addEventListener("click", (event) => {
     const link = ontargetEvent(event);
+    navbarMenu.classList.remove("open");
     scrollTo(link);
 });
 
@@ -79,4 +80,11 @@ workCategory.addEventListener("click", (event) => {
         });
         workProjects.classList.remove("anim-out");
     }, 300);
+});
+
+//Toggle and show the navbar items 
+const toggleBtn = document.querySelector(".navbar__toggle-btn"); 
+
+toggleBtn.addEventListener("click", () => {
+    navbarMenu.classList.toggle("open");
 });
