@@ -4,6 +4,7 @@ const arrowUp = document.querySelector("#arrow__up");
 const arrowBtn = arrowUp.querySelector(".arrow__up__btn");
 const home = document.querySelector(".home__container");
 const homeContactBtn = home.querySelector(".home__contact");
+const toggleBtn = document.querySelector(".navbar__toggle-btn"); 
 
 // Scroll event 
 window.addEventListener("scroll", () => {
@@ -23,7 +24,7 @@ window.addEventListener("scroll", () => {
 
 function scrollTo(link) {
     const scrollTo = document.querySelector(`#${link}`);
-    scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    scrollTo.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 }
 
 function ontargetEvent(event) {
@@ -83,8 +84,6 @@ workCategory.addEventListener("click", (event) => {
 });
 
 //Toggle and show the navbar items 
-const toggleBtn = document.querySelector(".navbar__toggle-btn"); 
-
 toggleBtn.addEventListener("click", () => {
     navbarMenu.classList.toggle("open");
 });

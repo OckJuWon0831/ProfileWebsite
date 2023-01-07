@@ -344,6 +344,7 @@ p {
 
 /* Work */ 
 .category__btn {
+    position: relative;
     border: 1px solid var(--color-dark-white);
     border-radius: 4px;
     font-size: var(--font-regular);
@@ -365,7 +366,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
     opacity: 1;
-    top: 0;
+    top: 4px;
 }
 
 .category__count {
@@ -375,9 +376,9 @@ p {
     height: 24px;
     width: 24px;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 4px;
+    right: 4px;
     opacity: 0;
     transition: all var(--animation-duration);
     line-height: 24px;
@@ -530,6 +531,13 @@ p {
 
 /* For below 767px screen width */
 @media screen and (max-width: 768px) {
+    :root {
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
     .navbar__toggle-btn {
         display: block;
     }
@@ -539,6 +547,10 @@ p {
         background-color: var(--color-pink);
         z-index: 1;
     }
+    .section {
+        padding: 16px;
+        padding-top: 40px;
+    }
     .navbar__menu {
         flex-direction: column;
         text-align: center;
@@ -547,6 +559,8 @@ p {
     }
     .about__majors {
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
     .major {
         margin-bottom: 30px;
@@ -554,11 +568,37 @@ p {
     .skillset {
         flex-direction: column;
     }
+    .work__categories {
+        flex-direction: column;
+    }
+    .category__btn {
+        margin: 4px;
+    }
     .project {
         flex-grow: 1;
     }
+    .testimonial {
+        flex-direction: column;
+    }
     .testimonial__avatar {
+        margin: auto;
         width: 80px;
         height: 80px;
+    }
+    .testimonial__avatar:nth-child(odd) {
+        margin-bottom: 16px;
+    }
+    
+    .testimonial__avatar:nth-child(even) {
+        margin-top: 16px;
+    }
+    #arrow__up {
+        bottom: 32px;
+        right: 32px;
+    }
+    .arrow__up__btn {
+        font-size: var(--font-medium);
+        height: 50px;
+        width: 50px;
     }
 }
